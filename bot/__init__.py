@@ -241,7 +241,7 @@ def wztgClient(*args, **kwargs):
     return tgClient(*args, **kwargs)
 
 
-IS_PREMIUM_USER = False
+IS_PREMIUM_USER = True
 user = ""
 USER_SESSION_STRING = environ.get("USER_SESSION_STRING", "")
 if len(USER_SESSION_STRING) != 0:
@@ -329,7 +329,7 @@ SEARCH_PLUGINS = environ.get("SEARCH_PLUGINS", "")
 if len(SEARCH_PLUGINS) == 0:
     SEARCH_PLUGINS = ""
 
-MAX_SPLIT_SIZE = 4194304000 if IS_PREMIUM_USER else 2097152000
+MAX_SPLIT_SIZE = 4194304000 if IS_PREMIUM_USER else 4194304000
 
 LEECH_SPLIT_SIZE = environ.get("LEECH_SPLIT_SIZE", "")
 if (
