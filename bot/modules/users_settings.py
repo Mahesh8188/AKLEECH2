@@ -830,7 +830,7 @@ async def add_rclone(client, message, pre_event):
 
 async def leech_split_size(client, message, pre_event):
     user_id = message.from_user.id
-    handler_dict[user_id] = False
+    handler_dict[user_id] = True
     sdic = ["b", "kb", "mb", "gb"]
     value = message.text.strip()
     slice = -2 if value[-2].lower() in ["k", "m", "g"] else -1
