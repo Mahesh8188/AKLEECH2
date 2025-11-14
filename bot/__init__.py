@@ -28,6 +28,10 @@ from logging import (
     warning as log_warning,
 )
 from uvloop import install
+import asyncio
+
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 
 # from faulthandler import enable as faulthandler_enable
 # faulthandler_enable()
