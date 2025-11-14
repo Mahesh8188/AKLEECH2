@@ -28,10 +28,6 @@ from logging import (
     warning as log_warning,
 )
 from uvloop import install
-import asyncio
-
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
 
 # from faulthandler import enable as faulthandler_enable
 # faulthandler_enable()
@@ -243,7 +239,10 @@ def wztgClient(*args, **kwargs):
     if "max_concurrent_transmissions" in signature(tgClient.__init__).parameters:
         kwargs["max_concurrent_transmissions"] = 1000
     return tgClient(*args, **kwargs)
+import asyncio
 
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 
 IS_PREMIUM_USER = True
 user = ""
