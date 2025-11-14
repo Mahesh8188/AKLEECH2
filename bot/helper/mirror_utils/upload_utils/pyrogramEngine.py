@@ -454,7 +454,7 @@ class TgUploader:
                         continue
                     if self.__is_cancelled:
                         return
-                    self.__prm_media = True if f_size > 2097152000 else False
+                    self.__prm_media = True if f_size > 4194304000 else False
                     cap_mono, file_ = await self.__prepare_file(file_, dirpath)
                     if self.__last_msg_in_group:
                         group_lists = [
